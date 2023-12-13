@@ -1,5 +1,7 @@
 package main
 
+// created by lazy man Ken Taylor
+
 import (
 	"fmt"
 	"os"
@@ -16,7 +18,7 @@ func main() {
 
 	if len(os.Args) < 2 {
 		fmt.Printf("Usage: %s <project_name>\n", os.Args[0])
-		fmt.Println("Not enough arguments. Usage: <project_name>")
+		fmt.Println("Not enough arguments. Usage: goinit <project_name>")
 		os.Exit(1)
 	}
 
@@ -34,7 +36,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	fmt.Printf("Project '%s' created successfully in %s!\n", projectName, currentDir)
+	fmt.Printf("Project '%s' created successfully in %s\n", projectName, currentDir)
 }
 
 func runCommand(command string, args ...string) error {
@@ -47,10 +49,9 @@ func runCommand(command string, args ...string) error {
 func createProjectStructure(baseDir, projectName string) error {
 	directories := []string{
 		"cmd",
-		"internal",
-		"pkg",
+		"lib",
+		"bin",
 		"api",
-		"web",
 	}
 
 	for _, dir := range directories {
@@ -86,7 +87,7 @@ package main
 import "fmt"
 
 func main() {
-    fmt.Println("Created project, %s!")
+    fmt.Println("Created project, %s")
 }
 `, projectName)
 
