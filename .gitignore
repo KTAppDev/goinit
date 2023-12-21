@@ -1,3 +1,6 @@
 bin/goinit-darwin-arm64
 bin/goinit
 bin/goinit
+bin
+.DS_Store
+bin
