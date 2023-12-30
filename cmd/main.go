@@ -17,8 +17,9 @@ func main() {
 	}
 
 	if len(os.Args) < 2 {
-		fmt.Printf("Usage: %s <project_name>\n", os.Args[0])
-		fmt.Println("Not enough arguments. Usage: goinit <project_name>")
+		// fmt.Printf("Usage: %s <project_name>\n", os.Args[0])
+		fmt.Println("Not enough arguments.")
+		fmt.Println("Example - goinit github.com/username/projectName")
 		os.Exit(1)
 	}
 
@@ -49,9 +50,8 @@ func runCommand(command string, args ...string) error {
 func createProjectStructure(baseDir, projectName string) error {
 	directories := []string{
 		"cmd",
-		"lib",
+		"internal",
 		"bin",
-		"api",
 	}
 
 	for _, dir := range directories {
@@ -66,6 +66,7 @@ func createProjectStructure(baseDir, projectName string) error {
 			if err != nil {
 				return err
 			}
+
 			// not sure what else i want to add right now
 		}
 	}
